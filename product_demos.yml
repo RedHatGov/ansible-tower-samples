@@ -19,8 +19,6 @@
         image: quay.io/acme_corp/product-demos-ee:latest
     controller_organizations:
       - name: Default
-        default_environment:
-          name: 'product-demos'
         galaxy_credentials:
           - Ansible Galaxy
           - Automation Hub
@@ -30,6 +28,7 @@
         scm_type: git
         scm_url: "{{ product_demos_url | default('https://github.com/ansible/product-demos') }}"
         scm_branch: "{{ product_demos_branch | default('main') }}"
+        default_environment: product-demos
         wait: true
     controller_templates:
       - name: "SETUP"
