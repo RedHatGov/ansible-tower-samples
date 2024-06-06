@@ -29,7 +29,7 @@
         organization: Default
         scm_type: git
         scm_url: "{{ product_demos_url | default('https://github.com/ansible/product-demos') }}"
-        scm_branch: "{{ product_demos_branch | default('main') }}"
+        scm_branch: creds-exist #"{{ product_demos_branch | default('main') }}"
         wait: true
     controller_templates:
       - name: "SETUP"
@@ -55,6 +55,17 @@
                 - network
                 - openshift
                 - satellite
+        extra_vars:
+          operation_translate:
+            present:
+              verb: "Create/Update"
+              action: "creation"
+            absent:
+              verb: "Remove"
+              action: "deletion"
+            exists:
+              verb: "Already Exists"
+              action: "exists"
 
       - name: "Multi-SETUP demos"
         project: "Ansible official demo project"
@@ -78,6 +89,17 @@
                 - openshift
                 - satellite
                 - windows
+        extra_vars:
+          operation_translate:
+            present:
+              verb: "Create/Update"
+              action: "creation"
+            absent:
+              verb: "Remove"
+              action: "deletion"
+            exists:
+              verb: "Already Exists"
+              action: "exists"
 
     user_message:
       - Run the SETUP job template and select a use case
