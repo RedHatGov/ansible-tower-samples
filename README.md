@@ -1,5 +1,7 @@
-# ansible-tower-samples
+# ARCHIVED: ansible-tower-samples
 Ansible Tower Playbook Samples
+
+This repo is now archived, and its functionality split into the [product-demos-postinstall](https://github.com/ansible/product-demos-postinstall) and [product-demos-bootstrap](https://github.com/ansible/product-demos-bootstrap) repos instead.  Please use these new repos when setting up [Ansible Product Demos](https://github.com/ansible/product-demos) in Ansible Automation Platform.
 
 ## Using this Repo
 
